@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
+   
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -10,21 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Update current year in footer
+   
     const currentYear = new Date().getFullYear();
     document.getElementById('current-year').textContent = currentYear;
 
-    // Contact Form Submission (Conceptual - requires backend for actual email sending)
+    
     const contactForm = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
 
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent default form submission
+            e.preventDefault(); 
 
-            // In a real application, you would send this data to a backend server
-            // using fetch() or XMLHttpRequest.
-            // For a simple client-side example, we'll just simulate a success/failure.
+            
 
             const viewerName = document.getElementById('viewerName').value;
             const viewerEmail = document.getElementById('viewerEmail').value;
@@ -38,23 +36,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Simulate sending data
+            
             formMessage.textContent = 'Sending your message...';
-            formMessage.className = 'form-message'; // Reset color
+            formMessage.className = 'form-message';
 
             setTimeout(() => {
-                // Simulate success or failure
-                const success = Math.random() > 0.2; // 80% chance of success
+               
+                const success = Math.random() > 0.2; 
 
                 if (success) {
                     formMessage.textContent = 'Message sent successfully! I will get back to you soon.';
                     formMessage.className = 'form-message success';
-                    contactForm.reset(); // Clear the form
+                    contactForm.reset();
                 } else {
                     formMessage.textContent = 'Failed to send message. Please try again later or contact me directly via email.';
                     formMessage.className = 'form-message error';
                 }
-            }, 2000); // Simulate network delay
+            }, 2000); 
         });
     }
+
 });
