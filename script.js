@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const viewerPhone = document.getElementById('viewerPhone').value;
             const viewerMessage = document.getElementById('viewerMessage').value;
 
-            // Basic validation
+            
             if (!viewerName || !viewerMessage) {
                 formMessage.textContent = 'Please fill in your name and message.';
                 formMessage.className = 'form-message error';
@@ -57,3 +57,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
